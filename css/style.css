@@ -1,0 +1,15 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+main {
+    height: 800px;
+    padding-top: 200px;
+
+}
+
+.bordi {
+    border: #dc3545 2px solid;
+}
