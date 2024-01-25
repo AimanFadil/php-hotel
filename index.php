@@ -40,6 +40,23 @@ $hotels = [
 
 ];
 
+$array_hotel = $hotels;
+
+if (isset($_GET['parking']) && $_GET['parking'] != '') {
+    $hotelP = [];
+    $parking = $_GET['parking'];
+
+    foreach ($hotels as $hotel) {
+        if ($hotel['parking'] == $parking) {
+            $hotelP[] = $hotel;
+        }
+    }
+
+    $array_hotel = $hotelP;
+}
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -57,6 +74,14 @@ $hotels = [
     <main>
         <div class="container ">
             <div class="row">
+                <form action="index.php">
+                    <div class="col-5 py-4">
+                        <input type="text" class="form-control " name="parking" id="parking" placeholder="Cerca parking" value="<?php echo $_GET['parking'] ?? '' ?>">
+                    </div>
+                    <div class="col-5 py-4">
+                        <button type="submit" class="btn btn-danger">Cerca</button>
+                    </div>
+                </form>
                 <div class="col-12 text-center">
                     <table class="table bordi">
                         <thead>
@@ -69,7 +94,7 @@ $hotels = [
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($hotels as $hotel) { ?>
+                            <?php foreach ($array_hotel as $hotel) { ?>
                                 <tr>
                                     <td>
                                         <?php echo $hotel['name'] ?>
