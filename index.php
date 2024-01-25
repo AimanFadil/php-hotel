@@ -52,12 +52,10 @@ $hotels = [
 </head>
 
 <body>
+    <?php include_once __DIR__ . "./partials/templates/header.php"; ?>
     <main>
         <div class="container ">
             <div class="row">
-                <div class="col-12 text-center">
-                    <h1>HOTELS</h1>
-                </div>
                 <div class="col-12 text-center">
                     <table class="table">
                         <thead>
