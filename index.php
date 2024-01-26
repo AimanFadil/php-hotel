@@ -40,6 +40,7 @@ $hotels = [
 
 ];
 
+
 $array_hotel = $hotels;
 
 if (isset($_GET['parking']) && $_GET['parking'] != '') {
@@ -103,13 +104,13 @@ if (isset($_GET['parking']) && $_GET['parking'] != '') {
                                         <?php echo $hotel['description'] ?>
                                     </td>
                                     <td>
-                                        <?php echo $hotel['parking'] ?>
+                                        <?php echo ($hotel['parking']) ? 'yes' : 'no'; ?>
                                     </td>
                                     <td>
                                         <?php echo $hotel['vote'] ?>
                                     </td>
                                     <td>
-                                        <?php echo $hotel['distance_to_center'] ?>
+                                        <?php echo $hotel['distance_to_center'] . " KM" ?>
                                     </td>
                                 </tr>
                             <?php } ?>
